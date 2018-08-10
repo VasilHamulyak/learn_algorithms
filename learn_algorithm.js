@@ -42,16 +42,17 @@ console.log(test);
 // console.log(binarySearch(test, 0, test.length, 23));
 
 function binarySearch1(arr, value) {
-    if (arr.length <= 0) return -1;
-    while(arr.length >= 1) {
-        var mid = Math.floor(arr.length / 2);
+    var mid = arr.length;
+    while(mid >= 1) {
+        mid = Math.floor(arr.length / 2);
         console.log(mid);
         if (arr[mid] === value) {
-            return mid;
+            return arr[mid];
         } else if (arr[mid] > value) {
-            arr.slice(0, mid);
+            arr = arr.slice(0, mid);
+            console.log(arr)
         } else {
-            arr.slice(mid+1);
+            arr = arr.slice(mid+1);
             console.log(arr);
         }
     }
